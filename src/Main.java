@@ -1,7 +1,6 @@
 public class Main {
     public static void main(String[] args) {
 
-        String randomWord = DisplayWord.wordFromArray;
         System.out.println("Welcome to Hangman!");
         System.out.println(DisplayWord.wordToUnderscore());
         UserInput userInput = new UserInput();
