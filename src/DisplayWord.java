@@ -25,5 +25,29 @@ public class DisplayWord {
         System.out.println();
     }
 
+    public static boolean isGameWon() {
+        for (char letter : wordFromArray.toCharArray()) {
+            if (!userGuessesArray.contains(letter)) {
+                return false;
+            }
+        }
+        return true;
+    }
 
+    public static boolean isGameLost(int maxIncorrectGuesses) {
+        int incorrectGuessCount = 0;
+
+        for (char guess : userGuessesArray) {
+            if (wordFromArray.indexOf(guess) == -1) {
+                incorrectGuessCount++;
+            }
+        }
+
+        System.out.println("*** You have used " + incorrectGuessCount + " lives out of " + maxIncorrectGuesses + ". ***");
+
+        return incorrectGuessCount >= maxIncorrectGuesses;
+    }
 }
+
+
+
