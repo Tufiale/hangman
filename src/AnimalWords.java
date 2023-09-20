@@ -4,7 +4,6 @@ import java.util.Random;
 public class AnimalWords {
 
     private static ArrayList<String> words = new ArrayList<>();
-
     private static Random random = new Random();
 
     static {
