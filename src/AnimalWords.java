@@ -24,5 +24,4 @@ public class AnimalWords {
         return words.get(random.nextInt(words.size()));
     }
 
-
 }
