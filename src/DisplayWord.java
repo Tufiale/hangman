@@ -43,7 +43,7 @@ public class DisplayWord {
             }
         }
 
-        System.out.println("*** You have used " + incorrectGuessCount + " lives out of " + maxIncorrectGuesses + ". ***");
+        System.out.println("*** You have " + (maxIncorrectGuesses - incorrectGuessCount) + " lives remaining ***");
 
         return incorrectGuessCount >= maxIncorrectGuesses;
     }

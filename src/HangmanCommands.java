@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class HangmanCommands {
 
+    private int maxIncorrectGuesses = getNumberOfLives();
+
     public void commands() {
         intro();
-
-        int maxIncorrectGuesses = getNumberOfLives();
 
         while (true) {
             UserInput userInput = new UserInput();
@@ -35,13 +35,17 @@ public class HangmanCommands {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the number of lives you want:");
         while (true) {
-            int lives = scan.nextInt();
-            if (lives > 0) {
-                return lives;
+            if (scan.hasNextInt()) {
+                int lives = scan.nextInt();
+                if (lives > 0) {
+                    return lives;
+                } else {
+                    System.out.println("Please enter a positive number of lives:");
+                }
             } else {
-                System.out.println("Please enter a positive number of lives:");
+                String input = scan.next();
+                System.out.println("Please input a number. \"" + input + "\" is not a valid input.");
             }
-
         }
     }
 }
